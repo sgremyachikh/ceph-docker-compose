@@ -16,8 +16,8 @@ services:
       LANG: ${LANG}
       TZ: ${TZ}
     volumes:
-      - ${VOLUMES_PATH}/ceph:/etc/ceph
-      - ${VOLUMES_PATH}/lib/:/var/lib/ceph/
+      - ${VOLUMES_PATH}/ceph:/etc/ceph:z
+      - ${VOLUMES_PATH}/lib/:/var/lib/ceph/:z
     networks:
       - cluster-net
 
@@ -28,8 +28,8 @@ services:
       LANG: ${LANG}
       TZ: ${TZ}
     volumes:
-      - ${VOLUMES_PATH}/ceph:/etc/ceph
-      - ${VOLUMES_PATH}/lib/:/var/lib/ceph/
+      - ${VOLUMES_PATH}/ceph:/etc/ceph:z
+      - ${VOLUMES_PATH}/lib/:/var/lib/ceph/:z
     depends_on:
       - mon1
     networks:
@@ -46,9 +46,9 @@ services:
       LANG: ${LANG}
       TZ: ${TZ}
     volumes:
-      - ${VOLUMES_PATH}/ceph:/etc/ceph
-      - ${VOLUMES_PATH}/lib/:/var/lib/ceph/
-      - ${OSD_PATH}/osd1:/var/lib/ceph/osd
+      - ${VOLUMES_PATH}/ceph:/etc/ceph:z
+      - ${VOLUMES_PATH}/lib/:/var/lib/ceph/:z
+      - ${OSD_PATH}/osd1:/var/lib/ceph/osd:z
     depends_on:
       - mon1
     networks:
@@ -63,9 +63,9 @@ services:
       LANG: ${LANG}
       TZ: ${TZ}
     volumes:
-      - ${VOLUMES_PATH}/ceph:/etc/ceph
-      - ${VOLUMES_PATH}/lib/:/var/lib/ceph/
-      - ${OSD_PATH}/osd2:/var/lib/ceph/osd
+      - ${VOLUMES_PATH}/ceph:/etc/ceph:z
+      - ${VOLUMES_PATH}/lib/:/var/lib/ceph/:z
+      - ${OSD_PATH}/osd2:/var/lib/ceph/osd:z
     depends_on:
       - mon1
     networks:
@@ -80,9 +80,9 @@ services:
       LANG: ${LANG}
       TZ: ${TZ}
     volumes:
-      - ${VOLUMES_PATH}/ceph:/etc/ceph
-      - ${VOLUMES_PATH}/lib/:/var/lib/ceph/
-      - ${OSD_PATH}/osd3:/var/lib/ceph/osd
+      - ${VOLUMES_PATH}/ceph:/etc/ceph:z
+      - ${VOLUMES_PATH}/lib/:/var/lib/ceph/:z
+      - ${OSD_PATH}/osd3:/var/lib/ceph/osd:z
     depends_on:
       - mon1
     networks:
@@ -95,8 +95,8 @@ services:
       LANG: ${LANG}
       TZ: ${TZ}
     volumes:
-      - ${VOLUMES_PATH}/ceph:/etc/ceph
-      - ${VOLUMES_PATH}/lib/:/var/lib/ceph/
+      - ${VOLUMES_PATH}/ceph:/etc/ceph:z
+      - ${VOLUMES_PATH}/lib/:/var/lib/ceph/:z
     depends_on:
       - osd1
       - osd2
@@ -115,8 +115,8 @@ services:
       LANG: ${LANG}
       TZ: ${TZ}
     volumes:
-      - ${VOLUMES_PATH}/ceph:/etc/ceph
-      - ${VOLUMES_PATH}/lib/:/var/lib/ceph/
+      - ${VOLUMES_PATH}/ceph:/etc/ceph:z
+      - ${VOLUMES_PATH}/lib/:/var/lib/ceph/:z
     depends_on:
       - osd1
       - osd2
